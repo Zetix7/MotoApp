@@ -1,4 +1,5 @@
 ﻿using MotoApp.Components.CsvReader.Models;
+using System.Globalization;
 
 namespace MotoApp.Components.CsvReader.Extensions;
 
@@ -12,14 +13,14 @@ public static class CarExtensions
 
             yield return new Car
             {
-                Year = int.Parse(columns[0]),
+                Year = int.Parse(columns[0], CultureInfo.InvariantCulture),
                 Manufacturer = columns[1],
                 Name = columns[2],
-                Displacement = double.Parse(columns[3]),
-                Cylinders = int.Parse(columns[4]),
-                City = int.Parse(columns[5]),
-                Highway = int.Parse(columns[6]),
-                Combined = int.Parse(columns[7])
+                Displacement = double.Parse(columns[3], CultureInfo.InvariantCulture),
+                Cylinders = int.Parse(columns[4], CultureInfo.InvariantCulture),
+                City = int.Parse(columns[5], CultureInfo.InvariantCulture),
+                Highway = int.Parse(columns[6], CultureInfo.InvariantCulture),
+                Combined = int.Parse(columns[7], CultureInfo.InvariantCulture)
             };
         }
     }

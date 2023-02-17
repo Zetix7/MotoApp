@@ -1,5 +1,6 @@
 ﻿using MotoApp.Components.CsvReader.Extensions;
 using MotoApp.Components.CsvReader.Models;
+using System.Globalization;
 
 namespace MotoApp.Components.CsvReader;
 
@@ -31,7 +32,7 @@ public class CsvReader : ICsvReader
             {
                 Name = columns[0],
                 Country = columns[1],
-                Year = int.Parse(columns[2])
+                Year = int.Parse(columns[2], CultureInfo.InvariantCulture)
             };
         });
 
