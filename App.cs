@@ -1,19 +1,31 @@
 ﻿using MotoApp.Components.CsvReader;
+using MotoApp.Components.CsvReader.Models;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace MotoApp;
 
 internal class App : IApp
 {
     private readonly ICsvReader _csvReader;
+    private readonly IXmlReader _xmlReader;
 
-    public App(ICsvReader csvReader)
+    public App(ICsvReader csvReader, IXmlReader xmlReader)
     {
         _csvReader = csvReader;
+        _xmlReader = xmlReader;
     }
 
     public void Run()
     {
-        var cars = _csvReader.ProcessCars("Resources\\Files\\fuel.csv");
-        var manufacturers = _csvReader.ProcessCars("Resources\\Files\\manufacturers.csv");
+        _csvReader.GroupManufacturerByCountry();
+        _csvReader.GroupCarByManufacturers();
+        _csvReader.JoinCarsAndManufacturers();
+        _csvReader.JoinAndGroupCarsAndManufacturers();
+        _xmlReader.CreateCarsXmlFile();
+        _xmlReader.CreateManufacturersXmlFile();
+        _xmlReader.ReadCarsXmlFile();
+        _xmlReader.ReadManufacturersXmlFile();
+        _xmlReader.CreateManufacturersAndCarsJoinedXmlFile();
     }
 }

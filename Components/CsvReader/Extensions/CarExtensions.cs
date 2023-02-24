@@ -7,7 +7,7 @@ public static class CarExtensions
 {
     public static IEnumerable<Car> ToCar(this IEnumerable<string> source)
     {
-        foreach (var line in source) 
+        foreach (var line in source)
         {
             var columns = line.Split(',');
 
@@ -20,7 +20,7 @@ public static class CarExtensions
                 Cylinders = int.Parse(columns[4], CultureInfo.InvariantCulture),
                 City = int.Parse(columns[5], CultureInfo.InvariantCulture),
                 Highway = int.Parse(columns[6], CultureInfo.InvariantCulture),
-                Combined = int.Parse(columns[7], CultureInfo.InvariantCulture)
+                Combined = int.Parse(columns[7], CultureInfo.InvariantCulture),
             };
         }
     }
