@@ -3,7 +3,7 @@ using MotoApp.Data.Entities;
 
 namespace MotoApp.Data.Repositories;
 
-internal class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
+public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
 {
     private readonly DbSet<T> _dbSet;
     private readonly DbContext _dbContext;

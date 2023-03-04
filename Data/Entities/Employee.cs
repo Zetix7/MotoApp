@@ -1,6 +1,6 @@
 ﻿namespace MotoApp.Data.Entities;
 
-internal class Employee : EntityBase
+public class Employee : EntityBase
 {
     public string? FirstName { get; set; }
 

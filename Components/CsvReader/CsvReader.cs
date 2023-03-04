@@ -1,7 +1,5 @@
 ﻿using MotoApp.Components.CsvReader.Extensions;
 using MotoApp.Components.CsvReader.Models;
-using System.Globalization;
-using System.Xml.Linq;
 
 namespace MotoApp.Components.CsvReader;
 

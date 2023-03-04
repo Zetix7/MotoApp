@@ -2,7 +2,7 @@
 
 namespace MotoApp.Data.Entities.Extensions;
 
-internal static class EntityExtensions
+public static class EntityExtensions
 {
     public static T? Copy<T>(this T item)
     {
